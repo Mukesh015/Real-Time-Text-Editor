@@ -5,7 +5,7 @@ import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 import { io } from "socket.io-client";
 
-const socket = io("http://192.168.1.4:5000");
+const socket = io("http://localhost:5000");
 const DocsEditor = ({ activeDoc }) => {
 
   const docsId = activeDoc?._id;

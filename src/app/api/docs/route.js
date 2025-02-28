@@ -46,7 +46,7 @@ export async function GET(req) {
     const userDocs = await Docs.find({ "collaborators.userId": userId }).sort({
       updatedAt: -1,
     });
-console.log('userDocs :>> ', userDocs);
+    console.log("userDocs :>> ", userDocs);
     return NextResponse.json(
       { success: true, data: userDocs },
       { status: 200 }
@@ -59,6 +59,3 @@ console.log('userDocs :>> ', userDocs);
     );
   }
 }
-
-
-

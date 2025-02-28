@@ -10,7 +10,7 @@ const Sidebar = ({ setActiveDoc }) => {
   const [createNewDocument, setCreateNewDocument] = useState(false);
   const [newFileName, setNewFileName] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
-  const [files, setFiles] = useState([]); // Stores file names
+  const [files, setFiles] = useState([]);
   const inputRef = useRef(null);
   const userId = "67c14a4c41f7d1962d35b120";
   const handleOpenFile = (file, index) => {
@@ -21,11 +21,9 @@ const Sidebar = ({ setActiveDoc }) => {
     getDocument(userId).then((data) => {
       console.log("data :>> ", data);
       setFiles(data.data);
-      // const [myworkspace] = data.workspaces;
-      // console.log("myworkspace :>> ", myworkspace);
-      // setFiles(myworkspace.documents);
     });
   }, []);
+  
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (inputRef.current && !inputRef.current.contains(e.target)) {
@@ -43,7 +41,6 @@ const Sidebar = ({ setActiveDoc }) => {
   }, [createNewDocument]);
 
   const handleCreateNewFile = async () => {
-    console.log("hi");
     if (newFileName.trim() !== "") {
       let formattedName = newFileName.trim();
       if (!formattedName.endsWith(".txt")) {
