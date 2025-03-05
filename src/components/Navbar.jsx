@@ -67,7 +67,11 @@ const Navbar = ({ activeDoc }) => {
         <ul className="flex flex-row items-center gap-10">
           <li className="flex flex-row items-center gap-1">
             <GoDotFill size={25} fill="green" />
-            <p>{activeDoc?.collaborators?.map((it) => it?.userId?.userName)?.join(",")}</p>
+            <p>
+              {activeDoc?.collaborators
+                ?.map((it) => it?.userId?.userName)
+                ?.join(",")}
+            </p>
           </li>
           <li className="flex items-center gap-1">
             <Image
@@ -95,13 +99,15 @@ const Navbar = ({ activeDoc }) => {
               + {activeDoc?.collaborators?.length}
             </span>
           </li>
-          <li
-            onClick={() => setShowInviteModal(true)}
-            className="bg-gray-200 text_and_icon_button_background w-full flex items-center gap-2 p-2 rounded-md"
-          >
-            <FcInvite size={25} fill="gray" />
-            <span>Invite members</span>
-          </li>
+          {activeDoc && (
+            <li
+              onClick={() => setShowInviteModal(true)}
+              className="bg-gray-200 text_and_icon_button_background w-full flex items-center gap-2 p-2 rounded-md"
+            >
+              <FcInvite size={25} fill="gray" />
+              <span>Invite members</span>
+            </li>
+          )}
 
           <li className="flex flex-row items-center gap-3">
             {isLoggedIn ? (
