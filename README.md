@@ -5,6 +5,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
+yarn
+#and
 npm run dev
 # or
 yarn dev
@@ -14,7 +16,19 @@ pnpm dev
 bun dev
 ```
 
+Then, run the following, commands to run the socket:
+
+```bash
+cd socket
+# and
+npm i
+# and
+npm start
+
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+and make sure the socket server should be on and check the console if any problem appears.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 

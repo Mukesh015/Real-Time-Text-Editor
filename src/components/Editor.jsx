@@ -5,7 +5,7 @@ import "quill/dist/quill.snow.css";
 import { io } from "socket.io-client";
 import { store } from "@/util/localstorage";
 
-const socket = io("http://192.168.1.7:5000");
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL);
 
 // Debounce function
 const debounce = (func, wait) => {
